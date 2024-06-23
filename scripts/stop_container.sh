@@ -1,3 +1,4 @@
 set -e
 
-echo "Hi"
+containerid=$(docker ps -q)
+docker rm -f $containerid
