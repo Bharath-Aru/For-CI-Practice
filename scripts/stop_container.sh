@@ -1,4 +1,5 @@
 set -e
 
-containerid = 'docker ps | awk -f " " '{print $1}' '
+containerid=$(docker ps -q)
 docker rm -f $containerid
+
