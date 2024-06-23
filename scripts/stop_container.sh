@@ -1,4 +1,10 @@
 set -e
 
+echo "Hi"
 containerid=$(docker ps -q)
-docker rm -f $containerid
+
+if [ -n "$containerid" ]; then
+  docker rm -f $containerid
+else
+  echo "No running containers to remove."
+fi
